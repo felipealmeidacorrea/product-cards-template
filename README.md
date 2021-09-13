@@ -1,0 +1,1 @@
+Template base para para sistemas que utilizem cards de produtos com imagem, data de cadastro, código, descrição e status.
