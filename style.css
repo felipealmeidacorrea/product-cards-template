@@ -1,9 +1,18 @@
 ul {
-    display: inline-block;
-    vertical-align: top;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px , 1fr));
+  gap: 10px;
+  margin: 10px;
+  vertical-align: middle;
+}
+
+.container {
+  width: 90%;
+  margin: 10px;
 }
 
 .card {
+    width: 300px;
     display: grid;
     grid-template-columns: 300px;
     grid-template-rows: 200px 180px 80px;
@@ -78,11 +87,7 @@ ul {
     font-weight: 500;
   }
   
-  .card-stats .type{
-    font-size:11px;
-    font-weight: 300;
-    text-transform: uppercase;
-  }
+  
   .card:hover {
     transform: scale(1.05);
     box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
