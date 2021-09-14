@@ -31,7 +31,7 @@ ul {
   }
   .card-image {
     grid-area: image;
-    background: url("img1.jpg");
+    background: url("C:/Users/admin/Git/Kazanto/product-cards-template/resources/img1.jpg");
     background-repeat: no-repeat;
     background-position: center;
     border-top-left-radius: 15px;
