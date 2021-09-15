@@ -23,7 +23,6 @@ ul {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 10px;
   margin: 10px;
-  vertical-align: middle;
 }
 
 .card {
@@ -43,13 +42,16 @@ ul {
 }
 
 .card-image {
+  display: flex;
+  justify-content: center;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   image-rendering: optimizeSpeed;
 }
 
 .card-image img {
-  width: 60%;
+  width: 180px;
+  height: 180px;
 }
 
 .card-text {
