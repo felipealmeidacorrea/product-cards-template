@@ -47,6 +47,7 @@ ul {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   image-rendering: optimizeSpeed;
+  align-items: center;
 }
 
 .card-image img {
@@ -100,6 +101,18 @@ ul {
 .card-stats .border {
   border-left: 1px solid #63070F;
   border-right: 1px solid #63070F;
+}
+
+.card-stats .status-sep {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18;
+  font-weight: 500;
+}
+
+.card-stats .status {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18;
+  font-weight: 500;
 }
 
 .card-stats .status {
