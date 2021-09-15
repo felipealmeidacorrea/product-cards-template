@@ -29,14 +29,17 @@ ul {
     cursor: pointer;
     margin:30px;
   }
-  .card-image {
-    grid-area: image;
-    background: url("C:/Users/admin/Git/Kazanto/product-cards-template/resources/img1.jpg");
+  /*.card-image {
     background-repeat: no-repeat;
     background-position: center;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     background-size:contain;
+  }*/
+
+  .imagemcard {
+    vertical-align: middle;
+    width: 60%;
   }
   
   .card-text {
