@@ -1,9 +1,5 @@
-body {
-  margin: 0;
-}
-
 .header {
-  padding: 1px;
+  padding: 20px;
   text-align: center;
   background: #e41021;
   color: white;
@@ -11,13 +7,58 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/*paginação*/
+
+ul.paginas {
+  display: inline-block;
+  padding: 0;
+}
+
+ul.paginas li {
+  display: inline;
+  cursor: pointer;
+}
+
+ul.paginas li a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
+
+ul.paginas li a.active {
+  background-color: #e41021;
+  color: white;
+  border: 1px solid #e41021;
+}
+
+ul.paginas li a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+div.paginacao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 30px;
+}
+
+ul.paginas .seletor-pag-atual {
+  background-color: #e41021;
+  color: #ffffff;
+}
+
+/*botao de pesquisa*/
+
 .caixa-search {
   z-index: 2;
   float: right;
   position: fixed;
-  top: 30px;
-  left: 20px;
-  transform: translate(-2px);
+  top: 75px;
+  left: 15px;
   background-color: #333;
   height: 40px;
   border-radius: 40px;
@@ -32,31 +73,39 @@ body {
 }
 
 .caixa-search:hover>.botao-search {
-  background-color: #fff;
+  background-color: #ffffff;
   margin-left: 3px;
+  cursor: pointer;
+}
+
+.caixa-search input:focus {
+  z-index: 2;
+  width: 240px;
+  padding: 0 6px;
+  cursor: text;
 }
 
 .botao-search {
-  color: #e84118;
   float: left;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #333;
+  background-color: #333333;
   display: flex;
   justify-content: center;
   text-decoration: none;
   align-items: center;
   transition: 0.4s;
+  border-color: transparent;
 }
 
 .caixa-texto {
   border: none;
-  background-color: #333;
+  background-color: #333333;
   outline: none;
   float: right;
   padding: 0;
-  color: #fff;
+  color: #ffffff;
   font-size: 16px;
   transition: 0.4s;
   line-height: 40px;
@@ -64,13 +113,61 @@ body {
   cursor: text;
 }
 
-.container {
-  z-index: 0;
+/* remover setas do number - Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* remover setas do number - Firefox */
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/*botao-home*/
+
+.botao-home {
+  z-index: 2;
   display: inline-block;
-  position: center;
-  padding-top: 10px;
-  width: 95%;
-  margin: 10px;
+  position: fixed;
+  top: 150px;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #333333;
+}
+
+.botao-icone {
+  display: inline-block;
+  position: fixed;
+  top: 160px;
+  left: 25px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #333333;
+}
+
+.botao-icone img {
+  position: fixed;
+  top: 170px;
+  left: 35px;
+}
+
+.botao-icone:hover {
+  background-color: #ffffff;
+}
+
+/*Área dos cards*/
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 ul {
@@ -80,6 +177,10 @@ ul {
   margin: 10px;
   vertical-align: middle;
 }
+
+/*Card*/
+
+/*Imagem e infos*/
 
 .card {
   width: 300px;
@@ -101,11 +202,6 @@ ul {
   color: inherit;
   text-decoration: inherit;
   text-decoration-color: transparent;
-  z-index: 1;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 4;
 }
 
 .card-image {
@@ -149,6 +245,17 @@ ul {
   font-size: 28px;
 }
 
+/*
+------------------
+- Área de status -
+------------------
+*/
+
+/*
+Elaborar um retorno com condições para então trabalhar com classes e
+fazer uma barra de progresso alterando as cores de cinza para vermelho
+*/
+
 .card-stats {
   grid-area: stats;
   height: 80px;
@@ -170,8 +277,8 @@ ul {
 }
 
 .card-stats .border {
-  border-left: 1px solid #63070F;
-  border-right: 1px solid #63070F;
+  border-left: 1px solid #adabab;
+  border-right: 1px solid #adabab;
 }
 
 .card-stats .status {
@@ -180,7 +287,59 @@ ul {
   font-weight: 500;
 }
 
+.card-status-txt {
+  font-size: 18;
+  font-weight: 500;
+  margin: 5px auto;
+}
+
+.card-stats-incompleto {
+  grid-area: stats;
+  height: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: #ddd;
+}
+
+.card-stats-incompleto .stat {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.card-stats-incompleto .border {
+  border-left: 1px solid #adabab;
+  border-right: 1px solid #adabab;
+}
+
+.card-stats-incompleto .status {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18;
+  font-weight: 500;
+}
+
 .card:hover {
   transform: scale(1.05);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+/*Barra de navegação lateral*/
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #707070;
 }
