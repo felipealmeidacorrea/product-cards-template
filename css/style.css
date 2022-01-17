@@ -9,17 +9,17 @@
 
 /*paginação*/
 
-ul.paginas {
+.menu-nav__pages {
   display: inline-block;
   padding: 0;
 }
 
-ul.paginas li {
+ul.menu-nav__pages li {
   display: inline;
   cursor: pointer;
 }
 
-ul.paginas li a {
+ul.menu-nav__pages li a {
   color: black;
   float: left;
   padding: 8px 16px;
@@ -28,17 +28,17 @@ ul.paginas li a {
   border: 1px solid #ddd;
 }
 
-ul.paginas li a.active {
+ul.menu-nav__pages li a.menu-nav__pages--active {
   background-color: #e41021;
   color: white;
   border: 1px solid #e41021;
 }
 
-ul.paginas li a:hover:not(.active) {
+ul.menu-nav__pages li a:hover:not(.menu-nav__pages--active) {
   background-color: #ddd;
 }
 
-div.paginacao {
+.menu-nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,14 +46,14 @@ div.paginacao {
   margin: 30px;
 }
 
-ul.paginas .seletor-pag-atual {
+ul.menu-nav__pages .seletor-pag-atual {
   background-color: #e41021;
   color: #ffffff;
 }
 
 /*botao de pesquisa*/
 
-.caixa-search {
+.button-search {
   z-index: 2;
   float: right;
   position: fixed;
@@ -65,27 +65,27 @@ ul.paginas .seletor-pag-atual {
   padding: 10px;
 }
 
-.caixa-search:hover>.caixa-texto {
+.button-search:hover>.caixa-texto {
   z-index: 2;
   width: 240px;
   padding: 0 6px;
   cursor: text;
 }
 
-.caixa-search:hover>.botao-search {
+.button-search:hover>.button-search__img {
   background-color: #ffffff;
   margin-left: 3px;
   cursor: pointer;
 }
 
-.caixa-search input:focus {
+.button-search input:focus {
   z-index: 2;
   width: 240px;
   padding: 0 6px;
   cursor: text;
 }
 
-.botao-search {
+.button-search__img {
   float: left;
   width: 40px;
   height: 40px;
@@ -126,9 +126,9 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-/*botao-home*/
+/*button-home*/
 
-.botao-home {
+.button-home {
   z-index: 2;
   display: inline-block;
   position: fixed;
@@ -141,7 +141,7 @@ input[type=number] {
   background-color: #333333;
 }
 
-.botao-icone {
+.button-home__img {
   display: inline-block;
   position: fixed;
   top: 160px;
@@ -152,13 +152,13 @@ input[type=number] {
   background-color: #333333;
 }
 
-.botao-icone img {
+.button-home__img img {
   position: fixed;
   top: 170px;
   left: 35px;
 }
 
-.botao-icone:hover {
+.button-home__img:hover {
   background-color: #ffffff;
 }
 
@@ -196,15 +196,15 @@ ul {
   transition: 0.5s ease;
   cursor: pointer;
   margin: 30px;
-}
-
-.card-link {
   color: inherit;
   text-decoration: inherit;
   text-decoration-color: transparent;
 }
 
-.card-image {
+.card-link {
+}
+
+.card__img {
   grid-area: image;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -216,12 +216,12 @@ ul {
   align-items: center;
 }
 
-.card-image img {
+.card__img img {
   width: 180px;
   height: 180px;
 }
 
-.card-text {
+.card__text {
   grid-area: text;
   margin-top: 30px;
   margin-bottom: 25px;
@@ -229,18 +229,18 @@ ul {
   margin-right: 25px;
 }
 
-.card-text .date {
+.card__text .date {
   color: #e41021;
   font-size: 13px;
 }
 
-.card-text p {
+.card__text p {
   color: grey;
   font-size: 15px;
   font-weight: 300;
 }
 
-.card-text h2 {
+.card__text h2 {
   margin-top: 0px;
   font-size: 28px;
 }
@@ -256,7 +256,7 @@ Elaborar um retorno com condições para então trabalhar com classes e
 fazer uma barra de progresso alterando as cores de cinza para vermelho
 */
 
-.card-stats {
+.card__status {
   grid-area: stats;
   height: 80px;
   display: grid;
@@ -267,7 +267,7 @@ fazer uma barra de progresso alterando as cores de cinza para vermelho
   background: #e41021;
 }
 
-.card-stats .stat {
+.card__status .stat {
   padding: 10px;
   display: flex;
   align-items: center;
@@ -276,12 +276,12 @@ fazer uma barra de progresso alterando as cores de cinza para vermelho
   color: white;
 }
 
-.card-stats .border {
+.card__status .border {
   border-left: 1px solid #adabab;
   border-right: 1px solid #adabab;
 }
 
-.card-stats .status {
+.card__status .status {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18;
   font-weight: 500;
@@ -293,7 +293,7 @@ fazer uma barra de progresso alterando as cores de cinza para vermelho
   margin: 5px auto;
 }
 
-.card-stats-incompleto {
+.card__status--incompleto {
   grid-area: stats;
   height: 80px;
   display: grid;
@@ -304,7 +304,7 @@ fazer uma barra de progresso alterando as cores de cinza para vermelho
   background: #ddd;
 }
 
-.card-stats-incompleto .stat {
+.card__status--incompleto .stat {
   padding: 10px;
   display: flex;
   align-items: center;
@@ -313,12 +313,12 @@ fazer uma barra de progresso alterando as cores de cinza para vermelho
   color: white;
 }
 
-.card-stats-incompleto .border {
+.card__status--incompleto .border {
   border-left: 1px solid #adabab;
   border-right: 1px solid #adabab;
 }
 
-.card-stats-incompleto .status {
+.card__status--incompleto .status {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18;
   font-weight: 500;
